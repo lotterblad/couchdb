@@ -52,7 +52,7 @@ cookie(Key, Value, Options) ->
                            undefined ->
                                calendar:local_time();
                            LocalTime ->
-                               LocalTime
+                               erlang:localtime_to_universaltime(LocalTime)
                        end,
                 Age = case RawAge < 0 of
                           true ->
